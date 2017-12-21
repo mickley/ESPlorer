@@ -26,12 +26,18 @@ public class pyFiler {
 
         boolean success = true;
         sendBuf = new ArrayList<String>();
-
-        sendBuf.add("f=open('" + escape(ft) + "','w')");
+        
+        // JGM: Changed from https://github.com/4refr0nt/ESPlorer/issues/55
+        //sendBuf.add("f=open('" + escape(ft) + "','w')");
+        sendBuf.add("f=open('" + escape(ft) + "','wb')");
         for (String subs : s) {
-            sendBuf.add("f.write('" + escape(subs) + "\\n')");
+            
+            // JGM: Changed from https://github.com/4refr0nt/ESPlorer/issues/55
+            //sendBuf.add("f.write('" + escape(subs) + "\\n')");
+            sendBuf.add("f.write(bytes(" + lineToByteList(subs) + "))");
         }
         sendBuf.add("f.close()");
+        sendBuf.add("del f");
 
         return success;
     }
@@ -62,8 +68,24 @@ public class pyFiler {
 
     public boolean isExist() {
         return false;
+    } 
+    
+    // JGM: Added from https://github.com/4refr0nt/ESPlorer/issues/55
+    public String lineToByteList(String str) {
+        StringBuilder buf = new StringBuilder((str.length() * 4)+5);
+        buf.append('[');
+        
+        for(byte b : str.getBytes()) {
+            buf.append(String.valueOf(b));
+            buf.append(',');
+        }
+        
+        buf.append("10"); // \n - newline
+        buf.append(']');
+        
+        return buf.toString();
     }
-
+        
     public String escape(String str) {
         char ch;
         StringBuilder buf = new StringBuilder(str.length() * 2);

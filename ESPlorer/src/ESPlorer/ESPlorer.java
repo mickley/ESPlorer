@@ -47,7 +47,7 @@ public class ESPlorer extends javax.swing.JFrame {
     public static boolean pOpen = false;
     public static boolean sOpen = false;
     public static boolean portJustOpen = false;
-    public static final String version = "v0.2.0-rc5";
+    public static final String version = "v0.2.0-rc6";
     public static ArrayList<String> LAF;
     public static ArrayList<String> LAFclass;
     public static Preferences prefs;
@@ -1007,7 +1007,7 @@ public class ESPlorer extends javax.swing.JFrame {
             }
         });
 
-        NodeMCU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NodeMCU.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         NodeMCU.setMinimumSize(new java.awt.Dimension(100, 100));
         NodeMCU.setPreferredSize(new java.awt.Dimension(461, 537));
         NodeMCU.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1343,11 +1343,11 @@ public class ESPlorer extends javax.swing.JFrame {
             }
         });
         TextEditor.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-                TextEditorCaretPositionChanged(evt);
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 TextEditorInputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                TextEditorCaretPositionChanged(evt);
             }
         });
         TextEditor.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2846,7 +2846,7 @@ public class ESPlorer extends javax.swing.JFrame {
         NodeMCUSettings.setAutoscrolls(true);
         NodeMCUSettings.setOpaque(true);
 
-        OptionsFirmware.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Select firmware", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        OptionsFirmware.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Select firmware", 0, 0, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         OptionsFirmware.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
         Firmware.add(OptionNodeMCU);
@@ -2898,7 +2898,7 @@ public class ESPlorer extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        OptionsOther.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Other", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        OptionsOther.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Other", 0, 0, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
 
         FileAutoSaveDisk.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         FileAutoSaveDisk.setSelected(true);
@@ -2995,7 +2995,7 @@ public class ESPlorer extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        OptionsFileSendMode.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Send", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        OptionsFileSendMode.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Send", 0, 0, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         OptionsFileSendMode.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
         DelayLabel.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -3142,7 +3142,7 @@ public class ESPlorer extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLayeredPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data scrollback", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        jLayeredPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data scrollback", 0, 0, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setText("Terminal");
@@ -3218,7 +3218,7 @@ public class ESPlorer extends javax.swing.JFrame {
                     .addComponent(jLabel9)))
         );
 
-        jLayeredPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "SerialPort", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        jLayeredPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "SerialPort", 0, 0, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
 
         CustomPortName.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         CustomPortName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -3353,7 +3353,7 @@ public class ESPlorer extends javax.swing.JFrame {
 
         ATvXX.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BasicATcommandsPane.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Basic AT commands", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        BasicATcommandsPane.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(1), "Basic AT commands", 2, 0));
         BasicATcommandsPane.setToolTipText("Basic AT commnads");
         BasicATcommandsPane.setMaximumSize(new java.awt.Dimension(445, 50));
         BasicATcommandsPane.setMinimumSize(new java.awt.Dimension(445, 50));
@@ -4043,7 +4043,7 @@ public class ESPlorer extends javax.swing.JFrame {
 
         TopWiFiStaFiller1.setOpaque(true);
 
-        common.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Common parameters for commands", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        common.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Common parameters for commands", 2, 0));
         common.setMaximumSize(new java.awt.Dimension(445, 54));
         common.setMinimumSize(new java.awt.Dimension(445, 54));
         common.setPreferredSize(new java.awt.Dimension(445, 54));
@@ -5953,7 +5953,7 @@ public class ESPlorer extends javax.swing.JFrame {
 
         Command.getAccessibleContext().setAccessibleName("Command");
 
-        RightBigPane.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        RightBigPane.setBorder(new javax.swing.border.SoftBevelBorder(0));
         RightBigPane.setOpaque(true);
         RightBigPane.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -5988,7 +5988,7 @@ public class ESPlorer extends javax.swing.JFrame {
         TerminalPane.setViewportView(Terminal);
 
         Terminal.setEditable(false);
-        Terminal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Terminal.setBorder(new javax.swing.border.SoftBevelBorder(0));
         Terminal.setColumns(20);
         Terminal.setRows(50);
         Terminal.setTabSize(4);
@@ -6080,7 +6080,7 @@ public class ESPlorer extends javax.swing.JFrame {
         NodeFileManagerPane.setMaximumSize(new java.awt.Dimension(145, 145));
         NodeFileManagerPane.setName(""); // NOI18N
         NodeFileManagerPane.setPreferredSize(new java.awt.Dimension(145, 145));
-        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEADING, 2, 2);
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(3, 2, 2);
         flowLayout1.setAlignOnBaseline(true);
         NodeFileManagerPane.setLayout(flowLayout1);
 
@@ -13781,6 +13781,8 @@ public class ESPlorer extends javax.swing.JFrame {
         boolean success = false;
         log("pyFileSaveESP: Starting...");
         String[] content = TextEditor1.get(iTab).getText().split("\r?\n");
+        // JGM: Added this to allow saving files on micropython
+        LineDelay.setValue(100);
         if (pyFiler.Put(ft, content)) {
             pasteMode(false);
             success = SendTimerStart();

@@ -9330,6 +9330,9 @@
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FileFormatActionPerformed"/>
                                   </Events>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="ESPlorer_FileFormat"/>
+                                  </AuxValues>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="FileSystemInfo">
                                   <Properties>
